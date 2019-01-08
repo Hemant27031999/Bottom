@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "193663047032",
+    "firebase_url": "https://finalwartube.firebaseio.com",
+    "project_id": "finalwartube",
+    "storage_bucket": "finalwartube.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193663047032:android:d74a654d4958393d",
+        "android_client_info": {
+          "package_name": "com.example.hemant.bottom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "193663047032-3dt56u26tia663umpcnn71asvlifqtg3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hemant.bottom",
+            "certificate_hash": "342f5b7198a980915f740e7f658b2bf19476143f"
+          }
+        },
+        {
+          "client_id": "193663047032-njap1qjstad6lackvrkpg24smr4na11o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkWIApxMX2vb4hJ5wN5ZCHoQruDe_tSUg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "193663047032-njap1qjstad6lackvrkpg24smr4na11o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

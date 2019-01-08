@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back2"
+    tools:context=".OtherChannelFragment">
+
+    <LinearLayout
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:background="@drawable/style1"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/youtubebwlogo" />
+
+        <EditText
+            android:id="@+id/channelname"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="Name of Youtube Channel" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view1"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/style1"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/subsprv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:hint="..........."
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SUBSCRIBERS"
+            android:fontFamily="cursive"
+            android:id="@+id/sub"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/action1"
+        android:layout_height="wrap_content"
+        android:text="Show Subscribers"
+        android:layout_below="@+id/view2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="20dp"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/action1"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:id="@+id/subscrberochannel"
+        android:background="#d90101"
+        android:orientation="horizontal"
+        android:textSize="20sp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_margin="15dp"
+            android:src="@drawable/utube" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="11dp"
+            android:layout_marginRight="10dp"
+            android:text="Subscribe"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

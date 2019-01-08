@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Bottom</string>
+    <string name="title_stats">Stats</string>
+    <string name="title_posts">Posts</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="subs1">
+    78958987</string>
+    <string name="subs2">
+    79873897</string>
+    <string name="diff">914910</string>
+</resources>

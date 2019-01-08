@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/back2"
+    android:layout_height="match_parent"
+    tools:context=".PostFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="User Registration"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/style1"
+        android:orientation="vertical"
+        android:paddingTop="50dp"
+        android:paddingBottom="20dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your Name"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="5dp"
+            android:inputType="textEmailAddress"
+            android:id="@+id/editTextName"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your E-mail Address"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="5dp"
+            android:inputType="textEmailAddress"
+            android:id="@+id/editTextEmail"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your Password"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="5dp"
+            android:inputType="textPassword"
+            android:id="@+id/editTextPassword"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Register Yourself"
+            android:id="@+id/buttonRegister"
+            android:layout_margin="15dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#071ac4"
+            android:id="@+id/textViewSignin"
+            android:text="Already Registered? Sign In here !"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/user" />
+    </RelativeLayout>
+</ScrollView>
