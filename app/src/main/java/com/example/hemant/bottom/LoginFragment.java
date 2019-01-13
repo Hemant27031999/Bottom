@@ -88,15 +88,11 @@ public class LoginFragment extends Fragment {
         resetpassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().sendPasswordResetEmail("hy27.1999@gmail.com")
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(getContext(),"Password reset email sent.",Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
+                ResetPasswordFragment rpf=new ResetPasswordFragment();
+                FragmentManager manager=getFragmentManager();
+                FragmentTransaction transaction=manager.beginTransaction();
+                transaction.replace(R.id.fragment_container, rpf);
+                transaction.commit();
             }
         });
 

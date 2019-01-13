@@ -24,7 +24,7 @@
             android:id="@+id/channelname"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:hint="Name of Youtube Channel" />
+            android:hint="Name of Channel" />
 
     </LinearLayout>
 
@@ -50,11 +50,11 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/sub"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SUBSCRIBERS"
             android:fontFamily="cursive"
-            android:id="@+id/sub"
+            android:text="SUBSCRIBERS"
             android:textAlignment="center"
             android:textColor="#000"
             android:textSize="30dp"
@@ -63,25 +63,24 @@
     </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
         android:id="@+id/action1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show Subscribers"
         android:layout_below="@+id/view2"
         android:layout_centerHorizontal="true"
         android:layout_marginVertical="20dp"
+        android:text="Show Subscribers"
         android:textColor="#000"
         android:textSize="20dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <LinearLayout
+        android:id="@+id/subscrberochannel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/action1"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
-        android:id="@+id/subscrberochannel"
         android:background="#d90101"
         android:orientation="horizontal"
         android:textSize="20sp">
@@ -102,5 +101,11 @@
             android:textSize="20dp" />
 
     </LinearLayout>
-
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:elevation="100dp"
+        android:id="@+id/progress"/>
 </RelativeLayout>

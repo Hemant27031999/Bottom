@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +35,7 @@ public class OtherChannelFragment extends Fragment {
     private Statistics statistics;
     private TextView subscriber;
     private String API_Key="AIzaSyAyON6YdgkFrtNHrGGs3IFS4groadJhhts";
+    private ProgressBar progressBar;
 
     public OtherChannelFragment() {
         // Required empty public constructor
@@ -46,6 +48,7 @@ public class OtherChannelFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_other_channel, container, false);
 
+        progressBar=view.findViewById(R.id.progress);
         getNameofChannel=(EditText) view.findViewById(R.id.channelname);
         showsubs=(TextView) view.findViewById(R.id.subsprv);
         subscriber=(TextView) view.findViewById(R.id.sub);
@@ -60,8 +63,10 @@ public class OtherChannelFragment extends Fragment {
         });
 
         btnSubs.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
                 ApiInterface service = ApiClient.getClient().create(ApiInterface.class);
 
                 Call<Mainjson> call = service.getMainJson("statistics", getNameofChannel.getText().toString().trim(), API_Key);
@@ -72,6 +77,7 @@ public class OtherChannelFragment extends Fragment {
                         PageInfo pageInfo = response.body().getPageInfo();
                         int i = pageInfo.getTotalResults();
                         if (i == 0) {
+                            progressBar.setVisibility(View.INVISIBLE);
                             btnSubscribe.setEnabled(false);
                             showsubs.setText("No such channel exist.");
                             subscriber.setText("Check the Username");
@@ -80,6 +86,7 @@ public class OtherChannelFragment extends Fragment {
                             statistics = items.get(0).getStatistics();
                             showsubs.setText(statistics.getSubscriberCount());
                             subscriber.setText("Subscribers");
+                            progressBar.setVisibility(View.INVISIBLE);
                         }
                     }
 

@@ -45,9 +45,10 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_view_comments"
-                android:layout_marginHorizontal="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp">
 
             </android.support.v7.widget.RecyclerView>
 
@@ -56,12 +57,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:fontFamily="cursive"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                android:hint="Comment"
+                android:fontFamily="cursive"
+                android:hint="Comment (to be implemented)"
                 android:textColor="#000"
-                android:textSize="20dp"/>
+                android:textSize="20dp" />
 
 
             <RelativeLayout
@@ -79,20 +80,21 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="5dp"
-                        android:text="2 Likes"
+                        android:text="0 Likes"
                         android:textColor="#000"
                         android:textSize="20dp"
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/posttime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/posttime"
-                        android:fontFamily="cursive"
                         android:layout_marginLeft="20dp"
+                        android:text="Posted on : "
+                        android:fontFamily="cursive"
                         android:textColor="#000"
                         android:textSize="10dp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -102,7 +104,10 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="center_horizontal"
-                    android:text="Like" />
+                    android:textSize="20dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Like"
+                    android:textStyle="bold"/>
 
             </RelativeLayout>
 

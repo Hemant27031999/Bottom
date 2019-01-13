@@ -1,12 +1,18 @@
 package com.example.hemant.bottom;
 
 
+import android.app.Notification;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,14 +29,22 @@ import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.example.hemant.bottom.App.CHANNEL_1_ID;
 
 
 /**
@@ -45,7 +59,9 @@ public class PostingFragment extends Fragment {
     private Button mPost;
     private Button mCancel;
     private DatabaseReference mReference;
+    private DatabaseReference mdbReference;
     private FirebaseAuth mAuth;
+//    private NotificationManagerCompat notificationManager;
     private FirebaseUser user;
     private StorageReference imgstr;
 
@@ -100,12 +116,14 @@ public class PostingFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_posting, container, false);
 
+//        notificationManager=NotificationManagerCompat.from(getContext());
         mImageUser=(ImageView) view.findViewById(R.id.image_profile);
         mNameUser=(TextView) view.findViewById(R.id.name_user);
         mPostText=(EditText) view.findViewById(R.id.text_post_user);
         mPost=(Button) view.findViewById(R.id.button_post);
         mCancel=(Button) view.findViewById(R.id.button_cancel);
         mReference = FirebaseDatabase.getInstance().getReference();
+        mdbReference = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
         imgstr=FirebaseStorage.getInstance().getReference("uploads");
@@ -115,6 +133,15 @@ public class PostingFragment extends Fragment {
                 Glide.with(getContext()).load(uri).into(mImageUser);
             }
         });
+
+//        final Notification notification=new NotificationCompat.Builder(getContext(),CHANNEL_1_ID)
+//                .setSmallIcon(R.drawable.ic_post)
+//                .setContentTitle("Posts")
+//                .setContentText("New post has been made.")
+//                .setPriority(NotificationCompat.PRIORITY_HIGH)
+//                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+//                .build();
+
 
         mNameUser.setText(user.getDisplayName());
 
@@ -126,10 +153,45 @@ public class PostingFragment extends Fragment {
                 DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 Calendar cal = Calendar.getInstance();
                 String userId = dateFormat.format(cal.getTime());
-                int c=0;
-                Posts myPost=new Posts(c,post,name,userId);
+                Posts myPost=new Posts(post,name,userId);
 
                 mReference.child("Posts").child(userId).setValue(myPost);
+//                mdbReference.child("NumberofPosts").child("number").addListenerForSingleValueEvent(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                        k=dataSnapshot.getValue(Integer.class);
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                    }
+//                });
+//
+//                mSavingReference.child("NumberofPosts").addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                        mSavingReference.child("number").setValue(k+1);
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                    }
+//                });
+
+//                mReference.child("Posts").addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                        notificationManager.notify(1,notification);
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                    }
+//                });
+
 
                 Toast.makeText(getContext(),"Posted", Toast.LENGTH_SHORT).show();
 

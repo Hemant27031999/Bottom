@@ -4,14 +4,12 @@ public class Posts {
 
     public String posts;
     public String postby;
-    public int Likes;
     public String timeofposting;
 
     public Posts(){}
 
     public
-    Posts(int c,String pst,String pstby,String postingtime){
-        Likes=c;
+    Posts(String pst,String pstby,String postingtime){
         posts=pst;
         postby=pstby;
         timeofposting=postingtime;

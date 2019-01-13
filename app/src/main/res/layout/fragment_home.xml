@@ -78,7 +78,7 @@
                             android:text="@string/subs1"
                             android:textAlignment="center"
                             android:textColor="#fcfbfb"
-                            android:textSize="35sp"
+                            android:textSize="30sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -182,7 +182,7 @@
                             android:textAlignment="center"
                             android:text="@string/subs2"
                             android:textColor="#faf9f9"
-                            android:textSize="35sp"
+                            android:textSize="30sp"
                             android:textStyle="bold" />
 
 
@@ -216,6 +216,46 @@
                 </RelativeLayout>
             </LinearLayout>
         </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_margin="10dp">
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="@drawable/shape1"
+            android:id="@+id/bargraph"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PewDiePie"
+                android:layout_weight="1"
+                android:textColor="#fff"
+                android:textAlignment="textEnd"
+                android:paddingRight="10dp"
+                android:background="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#000"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:text="T-series"
+                    android:textColor="#fff" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -253,21 +293,6 @@
                 android:textStyle="bold" />
 
         </LinearLayout>
-
-        <Button
-            android:id="@+id/livestats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/shape1"
-            android:padding="10dp"
-            android:text="Live Stats"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
 
     </LinearLayout>
 
